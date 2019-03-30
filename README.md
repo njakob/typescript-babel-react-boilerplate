@@ -1,3 +1,3 @@
 <h1 align="center">
-  React Typescript Babel Boilerplate
+  Personal Typescript Babel React Boilerplate
 </h1>
