@@ -1,5 +1,5 @@
 import path from 'path';
-import webpack from 'webpack';
+import * as webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { getBuildInfo } from '@scripts/getBuildInfo';
 
@@ -9,7 +9,13 @@ const buildPath = path.join(process.cwd(), 'build');
 export default {
   target: 'web',
   devtool: 'sourcemap',
-  mode: 'production',
+  mode: 'development',
+
+  devServer: {
+    contentBase: buildPath,
+    compress: true,
+    port: 9000,
+  },
 
   entry: [
     path.join(sourcesPath, '@'),
@@ -54,8 +60,9 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({ title: 'react-typescript-babel-boilerplate' }),
     new webpack.DefinePlugin({
-      __DEV__: false,
+      __DEV__: true,
       __BUILD_INFO__: JSON.stringify(getBuildInfo()),
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 };
