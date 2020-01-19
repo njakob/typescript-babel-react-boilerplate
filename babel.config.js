@@ -1,7 +1,3 @@
-/* eslint-disable */
-
-"use strict";
-
 module.exports = function(api) {
   api.cache.forever();
   return {
@@ -10,7 +6,10 @@ module.exports = function(api) {
         '@babel/preset-env',
         {
           useBuiltIns: 'entry',
-          modules: 'commonjs'
+          modules: 'commonjs',
+          corejs: {
+            version: 3,
+          }
         },
       ],
       '@babel/typescript',
@@ -19,8 +18,7 @@ module.exports = function(api) {
     plugins: [
       ['babel-plugin-module-resolver', {
         root: ['./src'],
-        extensions: ['.js', '.ts', '.tsx'],
-        stripExtensions: ['.js'],
+        extensions: ['.js', '.json', '.ts', '.tsx'],
       }],
       '@babel/proposal-object-rest-spread',
       'babel-plugin-styled-components',

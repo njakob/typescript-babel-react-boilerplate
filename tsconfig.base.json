@@ -7,17 +7,11 @@
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "jsx": "react",
     "baseUrl": "src",
-    "typeRoots": [
-      "node_modules/@types",
-    ],
+    "types": []
   },
-  "include": [
-    "src/**/*",
-  ],
   "exclude": [
     "node_modules",
-    "build",
-  ],
+    "build"
+  ]
 }

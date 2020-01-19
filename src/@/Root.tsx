@@ -1,11 +1,10 @@
-
-import * as React from 'react';
+import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import App from './App';
+import { App } from './App';
 
 const theme = {};
 
-export default function Root(): JSX.Element {
+export function Root() {
   return (
     <ThemeProvider theme={theme}>
       <App />

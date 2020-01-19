@@ -1,7 +1,6 @@
+import { getCommitHash } from './getCommitHash';
 
-import getCommitHash from './getCommitHash';
-
-export default function getBuildInfo(): BuildInfo {
+export function getBuildInfo() {
   return {
     commitHash: getCommitHash(),
     buildTime: Date.now(),

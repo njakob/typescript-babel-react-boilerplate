@@ -4,32 +4,34 @@ module.exports = {
     'eslint-config-airbnb',
     'plugin:@typescript-eslint/recommended',
   ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: './tsconfig.json',
-  },
-  settings: {
-    'import/resolver': {
-      'babel-module': {},
-    },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {
+        "cwd": "packagejson"
+      }
+    }
   },
   plugins: [
     '@typescript-eslint',
   ],
-  globals: {
-    __DEV__: true,
-    __BUILD_INFO__: true,
-  },
   rules: {
     'class-methods-use-this': 'off',
+
     '@typescript-eslint/indent': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
+    'import/extensions': [
+      'error',
+      {
+        'js': 'never',
+        'jsx': 'never',
+        'ts': 'never',
+        'tsx': 'never'
+      }
+    ],
+
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
-    'no-underscore-dangle': ['error', {
-      allow: [
-        '__REDUX_DEVTOOLS_EXTENSION_COMPOSE__',
-      ],
-    }],
   }
 };

@@ -1,5 +1,8 @@
-
 module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: 'src/@/tsconfig.json',
+  },
   env: {
     browser: true,
   },
@@ -7,4 +10,12 @@ module.exports = {
     __DEV__: true,
     __BUILD_INFO__: true,
   },
+  rules: {
+    'no-underscore-dangle': ['error', {
+      allow: [
+        '__BROWSER__',
+        '__BUILD_INFO__',
+      ],
+    }],
+  }
 };
