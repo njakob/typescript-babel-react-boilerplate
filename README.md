@@ -8,7 +8,6 @@
 - `babel`
 - `webpack`
 - `react`
-- `redux`
 - `styled-components`
 - `eslint`
 - `eslint-config-airbnb`
