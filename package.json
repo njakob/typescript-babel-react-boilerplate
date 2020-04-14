@@ -20,8 +20,8 @@
     "lint": "eslint --ext js,ts,tsx .",
     "type-check": "tsc --noEmit -p ./src/@ && tsc --noEmit -p ./src/@scripts",
     "test": "npm run lint && npm run type-check",
-    "start": "node -r ./register ./node_modules/.bin/webpack-dev-server --config src/@scripts/webpack.dev.js",
-    "build": "node -r ./register ./node_modules/.bin/webpack --config src/@scripts/webpack.js"
+    "start": "node -r ./register ./node_modules/.bin/webpack-dev-server --config src/template/scripts/webpack.dev.js",
+    "build": "node -r ./register ./node_modules/.bin/webpack --config src/template/scripts/webpack.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.3",

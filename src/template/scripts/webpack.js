@@ -1,7 +1,8 @@
 import path from 'path';
 import * as webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { getBuildInfo } from '@scripts/getBuildInfo';
+
+import { getBuildInfo } from 'template/scripts/getBuildInfo';
 
 const sourcesPath = path.join(process.cwd(), 'src');
 const buildPath = path.join(process.cwd(), 'build');
@@ -12,7 +13,7 @@ export default {
   mode: 'production',
 
   entry: [
-    path.join(sourcesPath, '@'),
+    path.join(sourcesPath, 'template', 'application'),
   ],
 
   resolve: {
